@@ -1,0 +1,2 @@
+warning /home/leon/code/gravity_assist/src/calculate_assist.rs:33:9 unused variable: `exit_velocity`
+warning /home/leon/code/gravity_assist/src/render_window.rs:1:4 function `main` is never used
