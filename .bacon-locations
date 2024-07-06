@@ -1,3 +1,0 @@
-warning /home/leon/code/gravity_assist/src/calculate_assist.rs:3:14 unused import: `orbital_period`
-warning /home/leon/code/gravity_assist/src/calculate_assist.rs:38:9 unused variable: `semi_minor_axis`
-warning /home/leon/code/gravity_assist/src/render_window.rs:1:4 function `main` is never used

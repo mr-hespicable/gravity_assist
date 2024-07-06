@@ -1,6 +1,6 @@
 use rastro::{
     constants::{GM_EARTH, R_EARTH},
-    orbits::{orbital_period, orbital_period_general},
+    orbits::orbital_period_general,
 };
 use std::f64::{self, consts::PI};
 
