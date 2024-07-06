@@ -1,8 +1,12 @@
+use rastro::{
+    constants::{GM_EARTH, R_EARTH},
+    orbits::{orbital_period, orbital_period_general},
+};
 use std::f64::{self, consts::PI};
 
 use crate::vector::Vector;
 
-const GM: f64 = rastro::constants::GM_EARTH;
+const GM: f64 = GM_EARTH;
 
 /// Given an enter velocity and the planet's velocity, returns an exit velocity
 /// for a body (a probe) orbiting said planet, in the star's reference frame.
@@ -30,12 +34,15 @@ pub fn calculate_assist() {
     let enter_velocity = Vector::new(PI, 100_f64);
     let planet_velocity = enter_velocity;
 
-    let exit_velocity = velocity(enter_velocity, planet_velocity);
+    let semi_major_axis = R_EARTH + 100e3;
+    let semi_minor_axis = semi_major_axis;
 
-    let speed = orbital_speed(
-        GM,
-        rastro::constants::R_EARTH + 10e3,
-        rastro::constants::R_EARTH + 100e3,
-    );
+    let exit_velocity = velocity(enter_velocity, planet_velocity);
+    dbg!(exit_velocity);
+
+    let speed = orbital_speed(GM, R_EARTH + 100e3, R_EARTH + 100e3);
     dbg!(speed);
+
+    let orbital_period = orbital_period_general(semi_major_axis, GM);
+    dbg!(orbital_period);
 }
